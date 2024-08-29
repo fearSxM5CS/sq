@@ -1,0 +1,12 @@
+SET num_days = num_seconds DIV (24 * 3600);
+SET remaining_seconds = num_seconds MOD (24 * 3600);
+
+SET num_hours = remaining_seconds DIV 3600;
+SET remaining_seconds = remaining_seconds MOD 3600;
+
+SET num_minutes = remaining_seconds DIV 60;
+SET remaining_seconds = remaining_seconds MOD 60;
+
+SET result = CONCAT(num_days, ' days ', num_hours, ' hours ', num_minutes, ' minutes ', remaining_seconds, ' seconds');
+
+RETURN result;
